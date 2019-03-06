@@ -1,0 +1,627 @@
+<html><head>
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Regional Maps</title>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-106544095-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments)};
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-106544095-1');
+  </script>
+      <link rel="prefetch" as="image" href="hyperlanegrid.png">
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:500,700" rel="stylesheet">
+    <link rel="stylesheet" href="mapColor.css">
+  </head>
+  <body style="background-color: rgb(1, 65, 151);">
+
+  <div id="divHeading">
+      <button style="font-weight: 700;" id="spaceButton" class="tablinks tab buttons buttonBehaviour" onclick="openMap(event, 'SpaceTab');document.body.style.backgroundColor = '#fdc72e';">SPACE</button>
+      <button style="font-weight: 700;" id="earthButton" class="tablinks tab buttons buttonBehaviour active" onclick="openMap(event, 'EarthTab');document.body.style.backgroundColor = '#014197';">EARTH</button>
+      <button style="font-weight: 700;" class="tablinks tab buttons buttonBehaviour" onclick="openMap(event, 'InfoTab');document.body.style.backgroundColor = '#f5f5f5';" id="info">+</button>
+       <button id="regionheading" style="font-weight: 700;" class="buttons buttonBehaviour">THE UNIVERSAL ORDER OF NATIONS</button>
+  </div>
+
+
+<style>
+
+.buttons {
+	background-color: #f5f5f5;
+	color: #f5f5f5;
+	font-size:30px;
+	float:right;
+  	margin:0;
+  	font-family:Rubik;
+  	padding: 16px 18px;
+
+  
+}
+.buttonBehaviour {
+  	overflow: hidden;
+  	background-color: #f5f5f5;
+  	transition: 0.1s;
+  	border: none;
+  	outline: none;
+  	cursor: pointer;
+}
+
+#divHeading {
+  	background: #f5f5f5;
+  	font-weight: 900;
+  	text-align: left;
+  	padding: 1.3%;
+  	vertical-align: middle;
+  	display: inline-block;
+  	width: 100%;
+  	box-sizing: border-box;
+
+}
+
+ #regionheading {
+    font-weight: 900;
+    vertical-align: middle;
+    background-color: #f5f5f5;
+    float: left;
+    font-size: 30px;
+    color: #f5f5f5;
+      
+    }
+.list {
+  text-align: left;
+  padding-left: 25%;
+  list-style:none;
+  font-weight:600;
+  margin: 2%;
+}
+.headings {
+  text-align: left;
+  padding-left:26%;
+  font-weight: 700;
+}
+
+#table {
+    color:#ffffff;
+    display:flex;
+    justify-content:center;
+    flex-wrap: wrap;
+    width:100%;
+    text-align: center;
+}
+
+#table > div {
+    width:25%;
+}
+
+@media(max-width:1024px){
+    #table > div {
+        width:33%;
+    }
+}
+
+@media(max-width:768px){
+    #table > div {
+        width:50%;
+    }
+}
+
+@media(max-width:500px){
+    #table > div {
+        width:100%;
+    }
+}
+#regionheading {
+  font-size: 35px; 
+  color:#000000;
+  font-weight: 900;
+  font-family: Rubik; 
+  font-weight: 700;
+}
+
+
+@media only screen and (max-width: 1024px) {
+	#regionheading {
+		font-size:25px;
+	}
+}
+
+
+
+
+
+</style>
+
+  
+  <div id="EarthTab" class="tabcontent" style="display: block;">
+    <div id="earth">
+      <img id="earthmap" src="Earth_Map.png" style="width: 100%;">
+    </div>
+    <div id="earthlegend" style="overflow-x:auto;">
+
+  <div id="table">
+   <div class="newHeadings">
+      <h2 class="headings">AFRICA</h2>
+      <ul class="list">
+              <li><div class="box lopEarth"></div>Ivoria (LoP)</li>
+              <li><div class="box pgfEarth"></div>Hellenica</li>
+              <li><div class="box einheitEarth"></div>Tribal Artite</li>
+
+      </ul>
+   </div>
+   <div class="newHeadings">
+      <h2 class="headings">ASIA</h2>
+      <ul class="list">
+              <li><div class="box ashEarth"></div>Ash</li>
+              <li><div class="box republicaEarth"></div>Republica</li>
+              <li><div class="box rdaEarth"></div>North Pacific Empire</li>
+      </ul>
+   </div>
+   <div class="newHeadings">
+      <h2 class="headings">OCEANIA</h2>
+      <ul class="list">
+              <li><div class="box wsEarth"></div>Suburbia-Purlieu</li>
+              <li><div class="box isariiEarth"></div>Isarii</li>              
+      </ul>
+   </div>
+   <div class="newHeadings">
+      <h2 class="headings">EUROPE</h2>
+      <ul class="list">
+              <li><div class="box einheitEarth"></div>Einheitsreich</li>
+              <li><div class="box teutioniaEarth"></div>Teutionia</li>
+              <li><div class="box pgfEarth"></div>Hellenica</li>
+              <li><div class="box sicilia"></div>Hellenic Sicily</li>
+              <li><div class="box stekEarth"></div>Stekarus</li>
+              <li><div class="box childEarth"></div>Britannia</li>
+              <li><div class="box lopEarth"></div>The Rus</li>
+      </ul>
+   </div>
+   <div class="newHeadings">
+      <h2 class="headings">N. AMERICA</h2>
+      <ul class="list">
+              <li><div class="box ciEarth"></div>Confederate Imperium</li>
+              <li><div class="box cccpEarth"></div>CCCP</li>
+              <li><div class="box canada"></div>Canadian Restoration Zone</li>
+              <li><div class="box wsEarth"></div>The Mexican Crown Dominion</li>
+              <li><div class="box ashEarth"></div>Ashian Baja</li>
+              <li><div class="box rdaEarth"></div>North Pacific Empire</li>
+      </ul>
+   </div>
+   <div class="newHeadings">
+      <h2 class="headings">S. AMERICA</h2>
+      <ul class="list">
+              <li><div class="box wsEarth"></div>The Manteño Crown Dominion</li>
+              <li><div class="box cccpEarth"></div>CCCP</li>
+      </ul>
+   </div>
+</div>
+		<div class="spaceDate">
+        	<p class="footer">Updated 24th February 2019</p>
+        	<p class="footer">Made by  <img src="alexfavicon.png"> Alex and <img src="aidanfavicon.png"> Aidan</p>
+		</div>
+	</div>
+</div>
+
+
+<div id="SpaceTab" class="tabcontent" style="display: none;">
+    <div id="space">
+      <img id="spaceMap" src="Space_Map.png">
+    </div>
+    <script>
+      document.getElementById("spaceMap").src = "Space_Map.png";
+  
+      var clicked = false;
+      
+      function clickhyperlane() {
+            document.getElementById("hyperlaneButton").click();
+    }
+  
+      function toggleBtnClickhyperlane() {
+        var img = document.getElementById('spaceMap');
+        if (clicked) {
+          img.src = "Space_Map_H.png";
+          clicked = false;
+        } else {
+          img.src = "Space_Map.png";
+          clicked = true;
+        }
+      }
+      toggleBtnClickhyperlane()
+  
+    </script>
+  
+    <div id="hyperlanebuttonDiv" style="text-align: center; padding-top:3%;padding-bottom:5%;">
+      <a style="font-size: 25px; font-weight: 800;" onclick="toggleBtnClickhyperlane()" id="hyperlaneButton">HYPERLANES</a>
+    </div>
+
+
+  <div id="table" style="color: #000000;">
+     <div class="newHeadings">
+        <ul id="spaceList" class="list">
+                <li><div class="box teutioniaSpace"></div>Teutionia</li>
+                <li><div class="box ashSpace"></div>Ash</li>
+                <li><div class="box einheitSpace"></div>Einheitsreich</li>
+                <li><div class="box pgfSpace"></div>Hellenica</li>
+                <li><div class="box cccpSpace"></div>CCCP</li>
+        </ul>
+     </div>
+     <div class="newHeadings">
+        <ul id="spaceList" class="list">
+                <li><div class="box republicaSpace"></div>Republica</li>
+                <li><div class="box iniaSpace"></div>United Inian Federation</li>
+                <li><div class="box stekSpace"></div>Stekarus</li>
+                <li><div class="box lopSpace"></div>The Rus</li>
+                <li><div class="box wsSpace"></div>Suburbia-Purlieu</li>                
+        </ul>
+     </div>
+     <div class="newHeadings">
+        <ul id="spaceList" class="list">
+                <li><div class="box rdaSpace"></div>North Pacific Empire</li>
+                <li><div class="box dracoSpace"></div>Draco Aeternum</li>
+                <li><div class="box silbSpace"></div>Silberfluss</li>
+                <li><div class="box ukaristSpace"></div>Ukarist</li>
+                <li><div class="box auriganSpace"></div>Aurigan Reach</li>
+        </ul>
+     </div>
+     <div class="newHeadings">
+        <ul id="spaceList" class="list">
+                <li><div class="box ciSpace"></div>Confederate Imperium</li>
+                <li><div class="box nefSpace"></div>NEF</li>
+                <li><div class="box equostek"></div>Disputed Zone</li>
+                <li><div class="box fedelSpace"></div>Fedel</li>
+
+        </ul>
+     </div>
+
+	<div class="spaceDate" style="width:100%">
+        <p class="footer">Updated 24th February 2019</p>
+        <p class="footer">Made by  <img src="alexfavicon.png"> Alex and <img src="aidanfavicon.png"> Aidan</p>
+	</div>
+  </div>
+</div>
+
+<div id="InfoTab" class="tabcontent" style="display: none;">
+
+<div class="row">
+  <div id="leftColumn" class="column" style="width: 20%; ">
+  </div>
+  <div id="centreColumn" class="column" style="width: 60%;">
+    <div id="mainHeading"><h1>Request territory on the map</h1></div>
+    <div id="secondaryHeading"><h2><a href="https://docs.google.com/spreadsheets/d/1gfwoSR3S5tKJSj1ab-4edHINU6O9mPUEwRAMvgyJHJU/edit?usp=sharing" target="_blank">Check the status of your request</a></h2></div>
+    <div id="text">Make a map request here. If you are a new nation, be sure to fill out all sections.
+
+</div>
+    <div id="claimForm" align="center">
+    	<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfc3VMHZN8Zlm7w89C2BxBNWEPYes1AiE9aEf3OEnMSFN1HJA/viewform?bc=transparent&amp;embedded=true" width="700" height="1500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+    </div>
+  </div>
+
+  <div id="rightColumn" class="column" style="width: 20%;">
+    <h2></h2>
+  </div>
+</div>
+
+</div>
+
+
+    
+
+ <style>
+ .column {
+    float: left;
+    padding: 10px;
+    height: 100%; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+#textInfo {
+    font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+    letter-spacing: .01rem;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 19px;
+    line-height: 1.58;
+    letter-spacing: -.003em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+#mainInfoHeading {
+    font-family: Merriweather;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 45px;
+    padding-top: 75px;
+}
+#secondaryInfoHeading {
+    font-family: Merriweather;
+    font-weight: 700;
+    font-size: 25px;
+    padding-bottom: 35px;
+    padding-top: 13px;
+}
+.titlesInfo {
+    font-family: Merriweather;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 35px;
+    padding-top: 40px;
+    padding-bottom: 35px;
+}
+
+  #claim {
+    color: #000000;
+    text-align: center;
+  }
+  .legendcontent {
+    list-style:none; font-size: 19px; font-weight: 700; align: top;
+  }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Karla', sans-serif;
+    }
+    #preloadedImages
+    {
+        width: 0px;
+        height: 0px;
+        display: inline;
+        background-image: url(Space.png);
+        background-image: url(EarthPlain.png);
+        background-image: url(EarthDetailled.png);
+        background-image: url(hyperlanegrid.png);
+  
+    }
+
+
+    .spaceDate {
+      margin-top:1cm;
+      background: #282828;
+      color:#ffffff;
+      font-weight: 900;
+      text-align: left;
+      padding-top: 0.8%;
+      padding-bottom: 0.8%;
+      vertical-align: middle;
+      display: inline-block;
+      width: 100%;
+
+
+    }
+
+    .footer {
+    	padding-left: 1cm;
+    }
+    
+    #SpaceTab {
+      background: #fdc72e;
+    }
+    
+    #space {
+      background: #fdc72e;
+      text-align: center;
+      padding-top: 1cm;
+      image-rendering: smooth;
+      
+    }
+   
+    
+    #spaceLabels {
+      background: #fdc72e;
+      color: #f5f5f5;
+      text-align: center;
+      padding-top: 1cm;
+      
+    }
+    ul {
+      margin: 1em 0;
+      padding: 0 0 0 10px;
+    }
+    li {
+      margin: 0.5em 0;
+    }
+    
+    #hyperlaneButton.active {
+      background: #f5f5f5;
+      color: #000000;
+    }
+    #hyperlaneButton:hover {
+      background: #f5f5f5;
+      color: #000000;
+    }
+    #AfricaButton:hover {
+      background: #f5f5f5;
+      color: #000000;
+    }
+
+
+        .placeholder {
+    	background: #000000;
+    }
+    .box {
+    float: left;
+    width: 18px;
+    height: 18px;
+    margin: 0px;
+    margin-right: 15px;
+    vertical-align: text-bottom;
+    }
+
+    #spaceButton {
+      background-color: #f5f5f5;
+      color: #000000;
+    }
+
+    #earthButton {
+      background-color: #f5f5f5;
+      color: #000000;
+    }
+    #info {
+      background-color: #f5f5f5;
+      color: #000000;
+    }
+
+
+    #hyperlaneButton {
+      float: center;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 18px 20px;
+      transition: 0.1s;
+      font-size: 30px;
+      color: #f5f5f5;
+      vertical-align: bottom;
+      font-family: Rubik;
+      font-weight:500;
+      
+      background-color: #000000;
+      text-align: middle;
+      -webkit-animation: fadeEffect 0.5s;
+      animation: fadeEffect 0.5s;
+    }
+    #defaultOpen:hover {
+      background-color: #014197;
+    }
+    
+    #spaceButton:hover {
+      background-color: #ffd45b;
+    }
+    #earthButton:hover {
+      background-color: #0053c2;
+      color: #ffffff;
+    }
+    #defaultOpen.active {
+      background-color: #014197;
+    }
+    #spaceButton.active {
+      background-color: #fdc72e;
+    }
+    #earthButton.active {
+      background-color: #014197;
+      color:#ffffff;
+    }
+    #info.active {
+      background-color: #e0e0e0;
+      color: #000000;
+    }
+    #info:hover {
+      background-color: #e0e0e0;
+      color: #000000;
+    }
+
+    .tabcontent {
+      display: none;
+      border-top: none;
+      -webkit-animation: fadeEffect 0.5s;
+      animation: fadeEffect 0.5s;
+    }
+    .SMButton {
+      -webkit-animation: fadeEffect 0.5s;
+      animation: fadeEffect 0.5s;
+      vertical-align: middle;
+    }
+    #hyperlaneButton.active {
+      background-color: #ffffff;
+    }
+    @-webkit-keyframes fadeEffect {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes fadeEffect {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    #spaceMap {
+    	width: 60%;
+    }
+@media only screen and (max-width:600px) {
+
+	#regionheading {
+		display:none;
+	}
+	#info {
+		width:20%;
+		margin:0;
+	}
+	#earthButton {
+		width:40%;
+		margin:0;
+		float:left;
+	}
+	#spaceButton {
+		width:40%;
+		margin:0;
+	}
+	#divHeading {
+		margin:0;
+		padding:0;
+
+	}
+	.list {
+		padding-left:5%;
+	}
+	.headings {
+		padding-left:5%;
+	}
+	#spaceList {
+		padding-left:5em;
+	}
+	#hyperlanebuttonDiv {
+		margin-top:1em;
+		margin-bottom:1em;
+	}
+	#hyperlaneButton {
+		padding: 15px 17px;
+	}
+
+	#spaceMap {
+		width: 95%;
+	}
+	#leftColumn {
+	  display:none;
+	}
+	#centreInfoColumn {
+	  padding-left: 0;
+	  padding-right: 0;
+	}
+	#rightColumn {
+	  display:none;
+	}
+	.iframe {
+		width:100vw;
+	}
+}
+    </style>
+  <script>
+    function openMap(evt, mapName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(mapName).style.display = "block";
+      evt.currentTarget.className += " active";
+  }
+      document.getElementById("earthButton").click();
+
+
+
+      
+    function chBackcolor(color) {
+     document.body.style.background = color;
+  }
+  </script>
+  
+</body></html>
